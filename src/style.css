@@ -1,0 +1,164 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf);
+  }
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+div {
+    /* border: 1px solid black; */
+    /* color: rgba(0, 255, 81, 0.771); */
+}
+body {
+    min-height: 100vh;
+}
+.header,.footer {
+    min-height: 7vh;
+}
+.main {
+    min-height: 86vh;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    align-items: center;
+}
+.header div {
+    display: flex;
+    padding: 0 10px 0;
+    height: min-content;
+    align-items: center;
+    margin-right: 15px  ;
+    font-size: clamp(0.9rem, 2vw, 1.6rem);
+    /* font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: myFirstFont;
+    font-style: oblique;
+    /* box-shadow: rgba(63, 132, 185, 0.355) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    border-radius: 5px;
+    transition: all .07s ease;
+}
+
+.headerRight div:hover {
+    transform: scale(1.1);
+    color:red
+}
+.logo:hover {
+    transform: scale(1.1);
+    color:red
+}
+.headerRight {
+    max-width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.main {
+    display: flex;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
+
+.mainLeft, .mainRight {
+    min-width: 50vw;
+    flex: 1;
+}
+
+.mainRight {
+
+    background-image: url('./img/pexels-cottonbro-studio-6954064.jpg');
+    background-size: cover;
+    background-color: rgba(128, 128, 128, 0.76);
+    background-blend-mode: soft-light;
+    background-position-y: center;
+    padding: 0 50px 0;
+    display: flex;
+    align-items: center;
+    font-size: clamp(1.2rem, 2.5vw, 4rem);
+    font-style: oblique;
+    color: white;
+}
+
+.mainRight > :first-child::after{
+    content: 'Jean Anthelme Brillat-Savarin';
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: red;
+}
+
+.mainLeft {
+    display: grid;
+    grid-template-columns:  1fr 2fr  ;
+    grid-template-rows:  1fr 2fr ;
+    gap: 5px;
+}
+.foto_1 {
+    display: flex;
+    background-image: url('./img/pexels-william-choquette-2641886.jpg');
+    grid-row: 2;
+    grid-column: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.foto_2 {
+    display: flex;
+    background-image: url('./img/pexels-kyle-roxas-2122294.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    grid-row: 1 / span 2 ;
+    grid-column: 2;
+}
+.foto_3 {
+    display: flex;
+    background-image: url('./img/pexels-flo-dahm-541216.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    grid-row: 1  ;
+    grid-column: 1;
+}
+
+.logo {
+    position: absolute;
+    left: calc(50vw - clamp(1rem, 10vw, 200px)/2);
+    top: 2vw;
+    background-image: url('./img/logo.png');
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    min-width: clamp(0px, 15vw, 200px);
+    min-height: clamp(0px, 15vw, 200px);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+
+}
+.footer {
+    font-family: myFirstFont;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.menuDiv > div {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dish {
+    font-size: 1.4rem;
+}
+.dish h4{
+    font-size: 1rem;
+    font-family: myFirstFont;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid black;
+}
