@@ -3,6 +3,7 @@ import "./style.css";
 import basic from "./basic";
 import home from "./home";
 import menu from "./menu";
+import contact from "./contact";
 import { makeElement, bodyRemove } from "./helpers";
 
 basic();
@@ -18,6 +19,8 @@ homeBtn.addEventListener("click", () => {
 });
 menuBtn.addEventListener("click", () => {
   bodyRemove();
+  const menuGridarot = document.querySelector(".main");
+  menuGridarot.setAttribute("style", "flex-wrap:wrap");
   menu();
 });
 contactBtn.addEventListener("click", () => {

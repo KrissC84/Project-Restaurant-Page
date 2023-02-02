@@ -11,13 +11,24 @@ div {
     /* color: rgba(0, 255, 81, 0.771); */
 }
 body {
-    min-height: 100vh;
+    height: 100vh;
+    position: relative;
 }
 .header,.footer {
-    min-height: 7vh;
+    height: 7vh;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
-.main {
-    min-height: 86vh;
+.main, .mainHome {
+    height: 86vh;
+    overflow: auto;
+    max-height: 100%;
+    
+}
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: auto;
 }
 .header {
     display: flex;
@@ -25,6 +36,7 @@ body {
     justify-content: end;
     align-items: center;
 }
+
 .header div {
     display: flex;
     padding: 0 10px 0;
@@ -55,10 +67,10 @@ body {
     justify-content: space-around;
 }
 
-
-.main {
+.mainHome {
     display: flex;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;}
+
 
 .mainLeft, .mainRight {
     min-width: 50vw;
@@ -66,24 +78,19 @@ body {
 }
 
 .mainRight {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-image: url('./img/pexels-cottonbro-studio-6954064.jpg');
     background-size: cover;
     background-color: rgba(128, 128, 128, 0.76);
     background-blend-mode: soft-light;
     background-position-y: center;
     padding: 0 50px 0;
-    display: flex;
     align-items: center;
     font-size: clamp(1.2rem, 2.5vw, 4rem);
     font-style: oblique;
     color: white;
-}
-
-.mainRight > :first-child::after{
-    content: 'Jean Anthelme Brillat-Savarin';
-    font-size: clamp(1rem, 2vw, 2rem);
-    color: red;
 }
 
 .mainLeft {
@@ -125,13 +132,19 @@ body {
     top: 2vw;
     background-image: url('./img/logo.png');
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    min-width: clamp(0px, 15vw, 200px);
-    min-height: clamp(0px, 15vw, 200px);
+    min-width: clamp(5vw, 15vw, 200px);
+    min-height: clamp(5vw, 15vw, 200px);
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
 
 }
+.quoteAuthor {
+    display: block;
+    font-size: clamp(0.8rem, 2vw, 3rem);;
+    color: red;
+}
+
 .footer {
     font-family: myFirstFont;
     display: flex;
@@ -139,26 +152,50 @@ body {
     align-items: center;
 }
 
-.menuDiv {
+.menuDiv, .menuDrinkDiv, .menuDessertDiv {
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: 0.5fr repeat(9,1fr);
+    width: 28%;
+    /* justify-content: end; */
+    align-items: start;
+    margin-top: calc(clamp(0px, 15vw, 200px));
+    margin-left: 20px;
+}
+.menuDiv > div,.menuDrinkDiv > div , .menuDessertDiv > div {
+    font-size: calc(0.6vw + clamp(5px, 0.6rem ,1.0rem));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.menuDiv > div {
+    overflow: scroll;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-.dish {
-    font-size: 1.4rem;
+.dish, .drink, .dessert {
+    font-size: calc(0.6vw + clamp(5px, 0.6rem ,1.0rem));
 }
-.dish h4{
+.dish h4, .drink h4, .dessert h4{
     font-size: 1rem;
+    font-weight: 100;
     font-family: myFirstFont;
     margin-bottom: 0.6rem;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
+    text-align: center;
+}
+.h3Menu {
+    text-decoration: underline;
+}
+
+.contactDiv {
+    display: flex;
+    flex-direction: column;
+    font-family: myFirstFont;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(0.8rem, 1.6vw, 2.4rem);
+    margin-top: calc(clamp(0px, 15vw, 200px));
+}
+.info {
+    margin: 0.7rem 0 0.4rem;
 }

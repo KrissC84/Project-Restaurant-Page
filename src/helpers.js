@@ -19,9 +19,13 @@ function bodyRemove() {
   Array.from(document.querySelectorAll(".main *")).forEach((el) => { el.remove(); });
 }
 
-function addDish(parentDiv, name, description, imgUrl) {
-  makeElement("div", parentDiv, "dish", name);
-  makeElement("h4", ".dish:last-of-type", "description", description);
+function addDish(parentDiv, name, description, typeOfMenuItem) {
+  // Name of the dish
+  makeElement("div", parentDiv, typeOfMenuItem, name);
+  // Description of the dish
+  makeElement("h4", `.${typeOfMenuItem}:last-of-type`, "description", description);
 }
 
-export { makeElement, bodyRemove, addDish };
+export {
+  makeElement, bodyRemove, addDish,
+};
