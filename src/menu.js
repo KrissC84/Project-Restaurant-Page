@@ -62,8 +62,6 @@ const dishname8 = "Lobster Linguine";
 const dishDescription8 = "Linguine with a creamy sauce featuring chunks of succulent lobster.";
 const dishname9 = "Earl Grey Poached Halibut";
 const dishDescription9 = "Halibut fillets poached in an Earl Grey tea broth.";
-// const dishname10 = "Shrimp & Grits a la Creole";
-// const dishDescription10 = "Shrimp and creamy grits with a Creole-style sauce featuring peppers, onions, and spices.";
 
 const drinkName1 = "Classic Cocktails";
 const drinkDescr1 = "Martini, Margarita, Manhattan, and more";
@@ -98,5 +96,12 @@ const dessertName8 = "Spellbinding Strawberry Cheesecake";
 const dessertDescription8 = "A Polish-style cheesecake with fresh strawberries";
 const dessertName9 = "Heavenly Hazelnut Macaron";
 const dessertDescription9 = "A French macaron filled with hazelnut buttercream";
-// const dessertName10 = "Mystic Matcha Muffin";
-// const dessertDescription10 = "A fluffy matcha muffin with a green tea glaze.";
+
+const dishes = [dishname1,
+  dishname2,
+  dishname3,
+  dishname4, dishname5, dishname6, dishname7, dishname8, dishname9];
+
+export {
+  dishes,
+};

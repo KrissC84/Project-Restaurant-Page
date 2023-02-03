@@ -128,7 +128,7 @@ body {
 
 .logo {
     position: absolute;
-    left: calc(50vw - clamp(1rem, 10vw, 200px)/2);
+    left: calc(50vw - clamp(5vw, 15vw, 200px)/2);
     top: 2vw;
     background-image: url('./img/logo.png');
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -153,10 +153,10 @@ body {
 }
 
 .menuDiv, .menuDrinkDiv, .menuDessertDiv {
-    overflow: scroll;
+    /* overflow: scroll; */
     display: grid;
     grid-template-rows: 0.5fr repeat(9,1fr);
-    width: 28%;
+    width: 450px;
     /* justify-content: end; */
     align-items: start;
     margin-top: calc(clamp(0px, 15vw, 200px));
@@ -173,10 +173,10 @@ body {
 }
 
 .dish, .drink, .dessert {
-    font-size: calc(0.6vw + clamp(5px, 0.6rem ,1.0rem));
+    font-size: calc(2vw + clamp(10px, 0.6rem ,1.0rem));
 }
 .dish h4, .drink h4, .dessert h4{
-    font-size: 1rem;
+    font-size: calc(0.5vw + clamp(6px, 0.5rem ,1.0rem));
     font-weight: 100;
     font-family: myFirstFont;
     margin-bottom: 0.6rem;
@@ -187,7 +187,7 @@ body {
     text-decoration: underline;
 }
 
-.contactDiv {
+.contactDiv ,.reservationDiv{
     display: flex;
     flex-direction: column;
     font-family: myFirstFont;
@@ -199,3 +199,56 @@ body {
 .info {
     margin: 0.7rem 0 0.4rem;
 }
+
+li {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label,
+  input {
+    padding: 0.1rem;
+    margin-right: 2rem;
+  }
+  
+  input {
+    width: calc(28ch + 5vw);
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 1px solid gray;
+    /* padding-left: 1em; */
+    padding-bottom: 0.3em;
+  }
+  
+  .inputGroup {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+  }
+  
+  .input_wrong {
+    border: 1px solid red;
+  }
+  
+  button {
+    align-self: center;
+    justify-self: center;
+    padding: 0.5em;
+    background-color: rgb(246, 260, 252);
+    border-radius: 15px;
+    /* margin-left: 3em; */
+    margin-bottom: 2em;
+  }
+  label {
+    margin-top: 1rem;
+  }
+  .middleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: calc(clamp(0px, 15vw, 200px));
+    /* height: 70vh; */
+    box-shadow: 2px 5px 15px rgb(246, 255, 252);
+    flex-shrink: 1;
+    overflow: scroll;
+  }

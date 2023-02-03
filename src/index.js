@@ -4,6 +4,8 @@ import basic from "./basic";
 import home from "./home";
 import menu from "./menu";
 import contact from "./contact";
+import reservations from "./reservations";
+
 import { makeElement, bodyRemove } from "./helpers";
 
 basic();
