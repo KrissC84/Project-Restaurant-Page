@@ -10,8 +10,8 @@ export default function reservations() {
 
   // setting form element
   makeElement("form", ".middleContainer", "", "");
-  document.querySelector("form").setAttribute("action", "#");
-  document.querySelector("form").setAttribute("method", "get");
+  // document.querySelector("form").setAttribute("action", "#");
+  // document.querySelector("form").setAttribute("method", "get");
   makeElement("ul", "form");
 
   // Input field for first name
@@ -26,8 +26,23 @@ export default function reservations() {
   // Input field for tel
   makeInput("Phone Number", "tel", "tel", "tel", "true");
 
+  // Input field for date
+  makeInput("Date", "date", "date", "date", "true");
+  const date = new Date();
+  // don't let the date being in the past
+  let day = date.getDate();
+  let month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  if (month < 10) month = `0${month}`;
+  if (day < 10) day = `0${day}`;
+
+  const today = `${year}-${month}-${day}`;
+  document.getElementById("date").value = today;
+  document.getElementById("date").min = today;
+
   // Input field for dish
-  makeInput("Reserve your dish if you want", "food", "text", "food", "false");
+  makeInput("Reserve your dish-if you want", "food", "text", "food", "false");
   document.querySelector(".inputGroup:last-of-type>li>input").setAttribute("list", "choices");
 
   // add feature that a client can tell what will order
@@ -41,8 +56,13 @@ export default function reservations() {
 
   // add submit button
   makeElement("button", "form", "button", "Make Reservation");
-  document.querySelector("form>button").setAttribute("type", "submit");
+  // document.querySelector("form>button").setAttribute("type", "submit");
   document.querySelector("form>button").setAttribute("id", "button");
+  // document.querySelector("form>button").setAttribute("disabled", "true");
+  document.querySelector("form>button").addEventListener("click", () => {
+    bodyRemove();
+    reservations();
+  });
 }
 
 function makeInput(labelText, inputFor, inputType, inputAttribute, requiredType) {

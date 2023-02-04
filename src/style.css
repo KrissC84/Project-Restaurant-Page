@@ -213,7 +213,7 @@ li {
   
   input {
     width: calc(28ch + 5vw);
-    margin-bottom: 1em;
+    margin-bottom: 0.4em;
     border-radius: 5px;
     border: 1px solid gray;
     /* padding-left: 1em; */
@@ -240,7 +240,7 @@ li {
     margin-bottom: 2em;
   }
   label {
-    margin-top: 1rem;
+    margin-top: 0.7rem;
   }
   .middleContainer {
     display: flex;
@@ -250,5 +250,5 @@ li {
     /* height: 70vh; */
     box-shadow: 2px 5px 15px rgb(246, 255, 252);
     flex-shrink: 1;
-    overflow: scroll;
+    /* overflow: auto; */
   }
