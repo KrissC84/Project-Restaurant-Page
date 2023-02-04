@@ -41,6 +41,12 @@ export default function reservations() {
   document.getElementById("date").value = today;
   document.getElementById("date").min = today;
 
+  // Input field for tel
+  makeInput("Hour", "time", "time", "time", "true");
+  document.getElementById("time").min = "11:00";
+  document.getElementById("time").max = "20:00";
+  document.getElementById("time").step = "1800";
+
   // Input field for dish
   makeInput("Reserve your dish-if you want", "food", "text", "food", "false");
   document.querySelector(".inputGroup:last-of-type>li>input").setAttribute("list", "choices");
